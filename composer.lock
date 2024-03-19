@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7cbf2acce97ce3f4644ec0998b198a9a",
+    "content-hash": "ed1db24e07fec279538dbd887b97f097",
     "packages": [
         {
             "name": "brick/math",
@@ -1044,6 +1044,43 @@
                 }
             ],
             "time": "2023-12-03T19:50:20+00:00"
+        },
+        {
+            "name": "hulang/php-zip",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hulang/php-zip.git",
+                "reference": "08e537c8e9ea5cb061323371dfd5f1bfa3f535de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hulang/php-zip/zipball/08e537c8e9ea5cb061323371dfd5f1bfa3f535de",
+                "reference": "08e537c8e9ea5cb061323371dfd5f1bfa3f535de",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "hulang\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "hulang",
+                    "email": "hulangfy@163.com"
+                }
+            ],
+            "description": "PHP Packing compression unzipping Class",
+            "support": {
+                "issues": "https://github.com/hulang/php-zip/issues",
+                "source": "https://github.com/hulang/php-zip/tree/1.0.1"
+            },
+            "time": "2022-12-12T05:33:57+00:00"
         },
         {
             "name": "laravel/framework",

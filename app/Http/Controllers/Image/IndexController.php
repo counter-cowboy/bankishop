@@ -10,7 +10,14 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $images = Image::all();
+        $result = Image::all();
+
+      /*
+      $images = $result->sortBy('image');
+      */
+
+        $images=$result->sortBy('created_at');
+
         return view('images.index', compact('images'));
     }
 }

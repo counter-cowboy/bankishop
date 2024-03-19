@@ -25,7 +25,7 @@ class StoreController extends Controller
             $uniqueFileName = $fileNameToLowerEn . '.' . $extension;
 
             while (Storage::disk('local')->exists('images/'.$uniqueFileName)) {
-                $uniqueFileName = $originalFileName . '_'
+                $uniqueFileName = $uniqueFileName . '_'
                     . time() . Str::random(5) . '.' . $extension;
             }
 
