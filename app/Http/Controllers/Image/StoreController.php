@@ -24,12 +24,12 @@ class StoreController extends Controller
             $fileNameToLowerEn = Str::lower(Str::ascii($originalFileName, 'en'));
             $uniqueFileName = $fileNameToLowerEn . '.' . $extension;
 
-            while (Storage::disk('public')->exists($uniqueFileName)) {
+            while (Storage::disk('local')->exists('images/'.$uniqueFileName)) {
                 $uniqueFileName = $originalFileName . '_'
                     . time() . Str::random(5) . '.' . $extension;
             }
 
-            $pathToImage = $image->storeAs($uniqueFileName);
+            $pathToImage = $image->storeAs('images',$uniqueFileName);
 
             $imageSaved = Image::create(['image' => $pathToImage]);
 
