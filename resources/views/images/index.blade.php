@@ -5,8 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create upload</title>
-    <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
+    <title>Index images</title>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body style="background-color: #bacbe6">
@@ -20,17 +19,12 @@
 
                     {{-- image--}}
                     <div class="form-group w-50">
-                        <label>Add image 1</label>
+                        <label class="text-success mb-3">Add image</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" required multiple
-                                       id="multiFile"
-                                        class="custom-file-input" name="images[]">
+                                <input type="file" class="custom-file-input" id="multiFile" multiple name="images[]">
 
                                 <label class="custom-file-label">Choose file</label>
-                            </div>
-                            <div class="input-group-append">
-                                <span class="input-group-text">Upload</span>
                             </div>
                         </div>
                     </div>
@@ -47,7 +41,7 @@
     </div>
 </section>
 
-<script src="{{asset('assets/js/app.js')}}"></script>
+{{--<script src="{{asset('assets/js/app.js')}}"></script>--}}
 <script>
     document.querySelector('#multiFile').addEventListener('change',
     function () {

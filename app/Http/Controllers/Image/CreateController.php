@@ -10,7 +10,6 @@ class CreateController extends Controller
 {
     public function __invoke()
     {
-        $images = Image::all();
-        return view('images.index', compact('images'));
+        return view('images.create');
     }
 }
