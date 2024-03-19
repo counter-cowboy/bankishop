@@ -12,12 +12,8 @@ class ZipController extends Controller
 {
     public function __invoke(string $id)
     {
-
         $dataDB=Image::find($id);
-
         $imageFile=$dataDB['image'];
-
-//        $zipName = substr($imageFile, 7);
         $zipName=$imageFile;
 
         $zip = new ZipArchive();
@@ -27,7 +23,7 @@ class ZipController extends Controller
         if ($zip->open($zipName, ZipArchive::CREATE) === true)
         {
             $imagePath = public_path('storage/' . $imageFile);
-//           dd($imagePath);
+
             $zip->addFile($imagePath, $imageFile);
             $zip->close();
 

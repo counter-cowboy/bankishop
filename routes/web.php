@@ -27,7 +27,10 @@ Route::get('/', function () {
 Route::get('/', IndexController::class)->name('image.index');
 Route::get('/create', CreateController::class)->name('image.create');
 Route::post('/', StoreController::class)->name('image.store');
-
+Route::get('/images', \App\Http\Controllers\API\IndexController::class)
+    ->name('api.index');
+Route::get('/images/{image}', \App\Http\Controllers\API\ShowController::class)
+    ->name('api.show');
 
 Route::get('/zip/{img}', ZipController::class)->name('zip');
 
