@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Image\CreateController;
+use App\Http\Controllers\Image\IndexController;
+use App\Http\Controllers\Image\StoreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +20,9 @@ Route::get('/', function () {
     return view('images.index');
 })->name('image.index');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', IndexController::class)->name('image.index');
+Route::get('/create', CreateController::class)->name('image.create');
+Route::post('/', StoreController::class)->name('image.store');
+Auth::routes();
