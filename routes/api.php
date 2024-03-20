@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\API\IndexController;
+use App\Http\Controllers\API\ApiIndexController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,12 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::middleware('api')->get('/api', function (){return 'aarrdjkdfjjk'; })
-->name('api.index');*/
-//
-//Route::group(['middleware' => 'api', 'prefix' => ''],
-//    function () {
-////        dd('Router');
-//        Route::get('/images', IndexController::class)->name('api.index');
-//
-//    });
+Route::middleware('api')->group(function (){
+
+});
+
+

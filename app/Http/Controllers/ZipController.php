@@ -17,12 +17,12 @@ class ZipController extends Controller
         $zipName=$imageFile;
 
         $zip = new ZipArchive();
-        $zipName = public_path('storage/' . $zipName . '.zip');
+        $zipName = public_path('storage/images/' . $zipName . '.zip');
 
 
         if ($zip->open($zipName, ZipArchive::CREATE) === true)
         {
-            $imagePath = public_path('storage/' . $imageFile);
+            $imagePath = public_path('storage/images/' . $imageFile);
 
             $zip->addFile($imagePath, $imageFile);
             $zip->close();

@@ -27,10 +27,17 @@ Route::get('/', function () {
 Route::get('/', IndexController::class)->name('image.index');
 Route::get('/create', CreateController::class)->name('image.create');
 Route::post('/', StoreController::class)->name('image.store');
-Route::get('/images', \App\Http\Controllers\API\IndexController::class)
+
+
+Route::group(['namespace'=>'\App\Http\Controllers\API', 'prefix'=>'api' ], function ()
+{
+    Route::get('/images', \App\Http\Controllers\API\ApiIndexController::class)
     ->name('api.index');
-Route::get('/images/{image}', \App\Http\Controllers\API\ShowController::class)
+Route::get('/images/{image}', \App\Http\Controllers\API\ApiShowController::class)
     ->name('api.show');
+});
+
+
 
 Route::get('/zip/{img}', ZipController::class)->name('zip');
 

@@ -31,7 +31,7 @@ class StoreController extends Controller
 
             $pathToImage = $image->storeAs('images',$uniqueFileName);
 
-            $imageSaved = Image::create(['image' => $pathToImage]);
+            $imageSaved = Image::create(['image' => $uniqueFileName]);
 
 //            dd($imageSaved);
 
