@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
-use hulang\Zip;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 use ZipArchive;
 
 class ZipController extends Controller
@@ -14,11 +11,9 @@ class ZipController extends Controller
     {
         $dataDB=Image::find($id);
         $imageFile=$dataDB['image'];
-        $zipName=$imageFile;
 
         $zip = new ZipArchive();
-        $zipName = public_path('storage/images/' . $zipName . '.zip');
-
+        $zipName = public_path('storage/images/' . $imageFile . '.zip');
 
         if ($zip->open($zipName, ZipArchive::CREATE) === true)
         {
@@ -31,6 +26,5 @@ class ZipController extends Controller
         }
         else
             return "Failed to be zipped";
-
     }
 }
